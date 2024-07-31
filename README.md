@@ -57,8 +57,8 @@
 
 ## Study Member
 
-|![](https://avatars.githubusercontent.com/Gangto326)|![](https://avatars.githubusercontent.com/kyungwonS928)|![](https://avatars.githubusercontent.com/ㅓjjuj99)|![](https://avatars.githubusercontent.com/ycm0926)|![](https://avatars.githubusercontent.com/TaeHoonIm)|![](https://avatars.githubusercontent.com/march0320)|![](https://avatars.githubusercontent.com/lgh9776)|
+|![](https://avatars.githubusercontent.com/Gangto326)|![](https://avatars.githubusercontent.com/kyungwonS928)|![](https://avatars.githubusercontent.com/jjuj99)|![](https://avatars.githubusercontent.com/ycm0926)|![](https://avatars.githubusercontent.com/TaeHoonIm)|![](https://avatars.githubusercontent.com/march0320)|![](https://avatars.githubusercontent.com/lgh9776)|
 |---|---|---|---|---|---|---|
 |김강토<br>(스터디짱)|신경원<br>(깃허브 관리)|정유진<br>(깃허브 관리)|양창민|임태훈|김유민|이가현|
-|![](https://avatars.githubusercontent.com/lee-june-young)|![](https://avatars.githubusercontent.com/haochaen)|![](https://avatars.githubusercontent.com/duddn2012)|![](https://avatars.githubusercontent.com/cheongmok)|![](https://avatars.githubusercontent.com/chanu48)|||
+|![](https://avatars.githubusercontent.com/lee-june-young)|![](https://avatars.githubusercontent.com/haochaen73)|![](https://avatars.githubusercontent.com/duddn2012)|![](https://avatars.githubusercontent.com/cheongmok)|![](https://avatars.githubusercontent.com/chanu48)|||
 |이준영|김영진|고영우|황석주|홍찬우|||

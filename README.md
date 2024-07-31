@@ -48,8 +48,6 @@
 ## Pull request Convention
 
 
-(format 만들 예정)
-
 | PR 제목 | [과제 마감 날짜] 이름_문제풀이 |
 | --- | --- |
 | PR 내용 | 풀이 완료 한 문제 체크<br>느낀점<br>어려웠던 점<br>공유하고 싶은 점 |
@@ -57,4 +55,4 @@
 <br>
 
 ## Study Member
-
+(추가예정)

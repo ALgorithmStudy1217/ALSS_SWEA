@@ -1,5 +1,3 @@
-package SWEA;
-
 import java.util.Scanner;
 
 // SWEA 1859. 백만 장자 프로젝트 D2
@@ -12,7 +10,7 @@ import java.util.Scanner;
  * 판매는 얼마든지 할 수 있다.
  */
 
-public class SWEA1859 {
+public class Solution {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int totalCase = scanner.nextInt();

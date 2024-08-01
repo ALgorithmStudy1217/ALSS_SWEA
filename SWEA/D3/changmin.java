@@ -85,3 +85,83 @@ class Solution
     }
  
 }
+
+
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringTokenizer;
+ 
+
+//class Solution
+//{
+//    static int arr[][];
+//    static BufferedReader br;
+//    static BufferedWriter bw;
+//    static StringTokenizer st;
+//    static int n1_x, n1_y, n2_x, n2_y;
+//    public static void main(String args[]) throws Exception
+//    {
+//                br = new BufferedReader(new InputStreamReader(System.in));
+//        bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        int N = Integer.parseInt(br.readLine());
+//        for (int testCase = 1; testCase < N + 1; testCase++) {
+//            st = new StringTokenizer(br.readLine().trim());
+// 
+//            int n1 = Integer.parseInt(st.nextToken());
+//            int n2 = Integer.parseInt(st.nextToken());
+// 
+//            arr = new int[501][501];
+// 
+//            // 하단의 초기 값 넣어줌
+//            arr[500][1] = 1;
+//            arr[500][2] = 3;
+//            arr[500][3] = 6;
+// 
+//            // 왼쪽의 초기 값 넣어줌
+//            arr[499][1] = 2;
+//            arr[498][1] = 4;
+// 
+//            // 하단 가로 값 생성
+//            for (int i = 4; i < arr.length; i++) {
+//                arr[500][i] = arr[500][i - 1] + i;
+//            }
+// 
+//            // 왼쪽 세로 값 생성
+//            for (int i = 497; i >= 0; i--) {
+//                arr[i][1] = arr[i + 1][1] + (500 - i);
+//            }
+// 
+//            // 안의 값 생성
+//            for (int col = 499; col > 0; col--) {
+//                for (int row = 2; row < arr.length; row++) {
+//                    arr[col][row] = arr[col][row - 1] + (499 - col) + row + 1;
+//                }
+//            }
+// 
+//            for (int col = 500; col >= 0; col--) {
+//                for (int row = 1; row < arr.length; row++) {
+//                    if (arr[col][row] == n1) {
+//                        n1_x = 501 - col;
+//                        n1_y = row;
+//                    }
+//                    if (arr[col][row] == n2) {
+//                        n2_x = 501 - col;
+//                        n2_y = row;
+//                    }
+//                }
+//            }
+//            bw.write("#" + testCase + " " + arr[501 - (n1_x + n2_x)][n1_y + n2_y] + "\n");
+// 
+//        }
+//        bw.flush();
+//        bw.close();
+// 
+//    }
+//}

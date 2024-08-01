@@ -28,7 +28,7 @@ class Solution
             st = new StringTokenizer(br.readLine().trim(), " ");
             
             // 삽입 후 스택 형식으로 원소를 빼면서 cnt하기 위해 Deque 사용
-            Deque<Integer> numArr = new LinkedList<Integer>();
+            Deque<Integer> numArr = new ArrayDeque<Integer>();
             
             // 첫 줄만 가지고 답 도출 가능
             for (int rIndex=1; rIndex<=numSize; rIndex++) {

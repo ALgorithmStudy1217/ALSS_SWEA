@@ -28,7 +28,7 @@ public class Solution {
             int wrong = 0;
             boolean isChange = false;
             for(int i = N-1; i>0;i--) {
-                //맞는 값일 때, 이미 전치 되어있으면 되돌리기
+                //맞는 값일 때, 이미 전치 되어있으면 다시 전치해야함
                 if(board[0][i] == i+1 && isChange) {
                     wrong++;
                     isChange = false;

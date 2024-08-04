@@ -31,13 +31,14 @@ public class Solution {
            String binary = cal(M);
            int size = binary.length();
 
-          //길이를 맞춰준다
+          //이진수로 변환 후, 길이가 N보다 작으면 맞춰준다
            if(size < N) {
                for(int i = N; i > size; i--) {
                    binary = "0" + binary;
                }
 
            }
+            //0이 하나라도 있으면 OFF 출력
            if(binary.substring(binary.length() - N).contains("0")) System.out.println("#" + t + " " + "OFF");
            else System.out.println("#" + t + " " + "ON");
 

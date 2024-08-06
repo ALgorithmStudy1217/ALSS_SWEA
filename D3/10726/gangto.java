@@ -37,7 +37,7 @@ class Solution
             checkRange = bitSumList.get(checkRange);
             StringBuilder sb = new StringBuilder();
                 
-            if (num%checkRange == checkRange-1) {
+            if (((num%checkRange)^(checkRange-1)) == 0) {
                 sb.append("#").append(test_case).append(" ON\n");
             } else {
                 sb.append("#").append(test_case).append(" OFF\n");

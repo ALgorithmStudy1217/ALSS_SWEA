@@ -1,0 +1,63 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+ 
+class Solution
+{
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder answer = new StringBuilder();
+         
+        int T = Integer.parseInt(br.readLine());
+         
+        for(int test_case = 1; test_case <= T; test_case++)
+        {
+            StringTokenizer st = new StringTokenizer(br.readLine().trim());
+             
+            // int형을 넘는 범위 Long 타입을 사용해야 함
+            // 비트연산은 float, Double 의 실수형에선 사용할 수 없다.
+            Long XORnum = Long.parseLong(st.nextToken());
+            Long SUMnum = Long.parseLong(st.nextToken());
+             
+            // 예외처리
+            // XOR > SUM 인 불가능한 경우
+            if (XORnum > SUMnum) {
+                answer.append(-1).append("\n");
+            }
+            // 모두 0인 경우
+            else if (XORnum == 0 && SUMnum == 0) {
+                answer.append(0).append("\n");
+            }
+            // 원소가 하나일 경우
+            // Long 타입은 equals 로 비교해야 함
+            else if (XORnum.equals(SUMnum)) {
+                answer.append(1).append("\n").append(XORnum).append("\n");
+            }
+            else {
+                // XOR의 결과가 나올 수 없는 경우
+                // 0^XORnum == XORnum, 홀수는 똑같은 두 개의 정수로 나눌 수 없음
+                if ((SUMnum-XORnum) % 2 == 1) {
+                    answer.append(-1).append("\n");
+                }
+                 
+                else {
+                    SUMnum -= XORnum;
+                     
+                    // SUMnum의 반값. halfSUMnum ^ halfSUMnum == 0 이 되는 원리 사용.
+                    Long halfSUMnum = SUMnum/2;
+                     
+                    // halfSUMnum ^ XORnum 의 이진수 값이 온전하다면 합칠 수 있음
+                    if ((halfSUMnum ^ XORnum) == (halfSUMnum + XORnum)) {
+                        answer.append(2).append("\n").append((halfSUMnum ^ XORnum)).append(" ").append(halfSUMnum).append("\n");
+                    }
+                     
+                    else {
+                        answer.append(3).append("\n").append(halfSUMnum).append(" ").append(halfSUMnum).append(" ").append(XORnum).append("\n");
+                    }
+                }
+            }
+        }
+        System.out.print(answer);
+    }
+}

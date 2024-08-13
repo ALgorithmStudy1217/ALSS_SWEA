@@ -1,0 +1,75 @@
+import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.util.Arrays;
+/*
+한 번에 나갈 수 있는 학생들을 탐색하여 보내는 방식
+ 
+나가기로 결정한 학생과 "가장 가까운" 같이 나갈 수 있는 학생을 보냄
+ 
+짝수 방에서 나오면 -1 방과 동선이 겹치고,
+홀수 방으로 들어가면 +1 방과도 동선이 겹치는 것 확인.
+ 
+나가는 아이들의 방 위치를 기준으로 정렬 후 모든 아이들이 나가면 return
+*/
+ 
+class Solution
+{
+    public static void main(String args[]) throws Exception
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+         
+        int T = Integer.parseInt(br.readLine());
+         
+        for(int test_case = 1; test_case <= T; test_case++)
+        {
+            int students = Integer.parseInt(br.readLine());
+            int[][] studentsList = new int[students][2];
+             
+            for (int student=0; student<students; student++) {
+                st = new StringTokenizer(br.readLine().trim(), " ");
+                 
+                int start = Integer.parseInt(st.nextToken());
+                int end = Integer.parseInt(st.nextToken());
+                 
+                if (start > end) {
+                    int temp = end;
+                    end = start;
+                    start = temp;
+                }
+                 
+                if (start%2 == 0) {
+                    start -= 1;
+                }
+                if (end%2 == 1) {
+                    end += 1;
+                }
+                 
+                studentsList[student] = new int[]{start, end};
+            }
+         
+            Arrays.sort(studentsList, (o1, o2) -> o1[0] == o2[0] ? o1[1] - o2[1] : o1[0] - o2[0]);
+             
+            int answer = 0;
+            while (true) {
+                int lastMove = -1;
+                 
+                for (int index=0; index<students; index++) {
+                    if (studentsList[index][0] > lastMove) {
+                        lastMove = studentsList[index][1];
+                        studentsList[index] = new int[] {-1, -1};
+                   }
+                }
+                 
+                if(lastMove==-1) {
+                    break;
+                } else {
+                    answer ++;
+                }
+            }
+            System.out.println("#"+test_case+" "+answer);
+        }
+    }
+}

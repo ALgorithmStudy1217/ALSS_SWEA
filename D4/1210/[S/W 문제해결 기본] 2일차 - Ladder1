@@ -1,0 +1,95 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/*
+ 
+ 1. 사다리 타기 게임은 시작점에 따라 끝의 위치가 정해져 있다.
+ 
+ 2. 따라서, 가장 효율적인 탐색을 위해 목적지에서 시작.
+ 
+ 3. 위로 계속 거슬러 올라가다 좌, 우에 길이 나오면 "무조건" 이동
+ 
+ 4. 좌, 우를 IndexOutOfBoundsException 없이 탐색하기 위해 좌, 우의 가로 값이 하나 더 큰 배열을 선언
+ 
+ */
+
+public class Ladder {
+	
+	public static void main(String args[]) throws Exception
+	{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+		for(int test_case = 1; test_case <= 10; test_case++)
+		{
+        	// 양 옆으로 하나 큰 배열 생성
+            int[][] gameBoard = new int[100][102];
+            
+            // testNum 의 입력이 다른 것 확인!
+            int testNum = Integer.parseInt(br.readLine().trim());
+            
+            // 시작 지점 == 목적지. 도착 지점부터 거꾸로 올라가며 하나의 길만 탐색
+            int startX = 0;
+            int startY = 0;
+            
+            for (int row=0; row<100; row++) {
+                st = new StringTokenizer(br.readLine().trim(), " ");
+                
+				for (int col=1; col<101; col++) {
+                    
+                    // 배열 구현. 입력 값이 "2" (도착지점) 이면 시작 지점 좌표로 저장.
+                    int num = Integer.parseInt(st.nextToken());
+                    
+                    if (num == 2) {
+                        startX = col;
+                        startY = row;
+                    }
+                    
+                    gameBoard[row][col] = num;
+                }
+            }
+            
+            // 첫 줄에 도달할 때 까지 계속 진행
+            while (startY > 0) {
+                
+                // 위로 이동
+                startY -= 1;
+                
+                /*
+                 
+	             while 문으로도 구현 가능.
+	              
+	             while 반복문: 조건에 부합할 때 까지 한 칸씩 이동
+	             for 반복문: 어디까지가 조건에 부합하는지 확인 후 한 번에 이동
+	             
+                 */
+                
+                // 좌측에 길이 있으면 좌측으로 계속 이동
+                if (gameBoard[startY][startX-1] == 1) {
+                    
+                    for (int index=1; index<100; index++) {
+                        if (gameBoard[startY][startX-index] == 0) {
+                            startX -= (index-1);
+                            break;
+                        }
+                    }
+                }
+                
+                // 우측에 길이 있으면 우측으로 계속 이동
+                else if (gameBoard[startY][startX+1] == 1) {
+                    
+                    for (int index=1; index<100; index++) {
+                        if (gameBoard[startY][startX+index] == 0) {
+                            startX += (index-1);
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            System.out.println("#"+testNum+" "+(startX-1));
+		}
+	}
+
+}
